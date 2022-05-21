@@ -12,4 +12,5 @@ public class Author{
     public string FirstName { get; set; }
     [MaxLength(150)]
     public string LastName { get; set; }
+    public List<BookByAuthor> Books { get; set; }
 }

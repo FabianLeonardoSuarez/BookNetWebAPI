@@ -1,11 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace BookNetWebAPI.Dtos;
-public record AuthorDTO{
+public record CoverPhotoDTO{
     [Required]
     public int id {get; set;}
     public int idBook {get; set;}
-    public string firstName {get; set;}
-    public string lastName {get; set;}
-    public List<int> books { get; set; }
+    public string url {get; set;}
 }

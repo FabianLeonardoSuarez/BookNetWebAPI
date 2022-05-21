@@ -9,6 +9,6 @@ namespace BookNetWebAPI.Data;
         public List<Author> GetAuthors();
         public Book GetBookById(int bookid);
         public List<Book> GetBooks();
-        public bool SyncDataBase();
+        public Task SyncDataBase();
     }
     

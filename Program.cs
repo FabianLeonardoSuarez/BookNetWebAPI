@@ -1,6 +1,17 @@
+using BookNetWebAPI.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
+ConfigurationManager Configuration = builder.Configuration;
 // Add services to the container.
+builder.Services.AddDbContext<LibraryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("bdconn")));
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddScoped<ILibrary,LibraryProvider>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

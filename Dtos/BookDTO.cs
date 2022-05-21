@@ -10,5 +10,5 @@ public record BookDTO{
     public string excerpt {get; set;}
     public DateTime publishdate {get; set;}
     public string urlcoverimage {get; set;}
-
+    public List<int> authors { get; set; }
 }
