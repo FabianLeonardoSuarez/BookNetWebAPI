@@ -15,5 +15,5 @@ public class Book{
     public DateTime PublishDate { get; set; }
     [MaxLength(250)]
     public string UrlCoverImage { get; set; }= "";
-    public List<BookByAuthor> Authors { get; set; }
+    public List<BookByAuthor> Authors { get; set; } = null;
 }

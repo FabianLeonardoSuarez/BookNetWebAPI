@@ -22,13 +22,13 @@ namespace BookNetWebAPI.Data;
             return _context.Authors.Include(x=>x.Books).FirstOrDefault(x=>x.AuthorId==authorid);
         }
         public List<Author> GetAuthors(){
-            return _context.Authors.ToList();
+            return _context.Authors.Include(x=>x.Books).ToList();
         }
         public Book GetBookById(int bookid){
             return _context.Books.Include(x=>x.Authors).FirstOrDefault(x=>x.BookId==bookid);
         }
         public List<Book> GetBooks(){
-            return _context.Books.ToList();
+            return _context.Books.Include(x=>x.Authors).ToList();
         }
         public async Task SyncDataBase(){
             //Get CoverPhotos

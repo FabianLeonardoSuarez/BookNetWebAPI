@@ -72,7 +72,7 @@ namespace BookNetWebAPI.Controllers;
                 id = author.AuthorId,
                 firstName = author.FirstName,
                 lastName = author.LastName,
-                books = author.Books.Select(x=>x.BookId).ToList()
+                books = author.Books.Select(x=>x.BookId).ToList() 
             };
         }
     }
